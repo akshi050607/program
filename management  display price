@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+struct item {
+    int id;
+    char name[20];
+    int qty;
+    float price;
+};
+
+int main() {
+    struct item i[1];
+    int n = 0, ch, s, j;
+
+    do {
+        printf("\n1.Add  2.Display  3.Search  4.Update  5.Exit\n");
+        scanf("%d", &ch);
+
+        if(ch == 1) {
+            scanf("%d %s %d %f",
+                  &i[n].id, i[n].name, &i[n].qty, &i[n].price);
+            n++;
+        }
+
+        else if(ch == 2) {
+            for(j = 0; j < n; j++)
+                printf("%d %s %d %.2f\n",
+                       i[j].id, i[j].name, i[j].qty, i[j].price);
+        }
+
+        else if(ch == 3) {
+            scanf("%d", &s);
+            for(j = 0; j < n; j++)
+                if(i[j].id == s)
+                    printf("%d %s %d %.2f\n",
+                           i[j].id, i[j].name, i[j].qty, i[j].price);
+        }
+
+        else if(ch == 4) {
+            scanf("%d", &s);
+            for(j = 0; j < n; j++)
+                if(i[j].id == s)
+                    scanf("%s %d %f",
+                          i[j].name, &i[j].qty, &i[j].price);
+        }
+
+    } while(ch != 5);
+
+    return 0;
+}
