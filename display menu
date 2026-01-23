@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+void displayMenu();
+
+int main() {
+    displayMenu();
+    return 0;
+}
+
+void displayMenu() {
+    printf("MENU\n");
+    printf("1. Tea\n");
+    printf("2. Coffee\n");
+    printf("3. Juice\n");
+}
